@@ -1,0 +1,3 @@
+go test /{path} -run {func} -v -cover
+
+go test -tags={name (integration)} /{path} -run {func} -v -cover
