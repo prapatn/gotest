@@ -1,6 +1,7 @@
 package services_test
 
 import (
+	"fmt"
 	"gotest/services"
 	"testing"
 )
@@ -31,4 +32,16 @@ func TestCheckGrade(t *testing.T) {
 			}
 		})
 	}
+}
+
+func BenchmarkCheckGrade(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		services.CheckGrade(80)
+	}
+}
+
+func ExampleCheckGrade() {
+	grade := services.CheckGrade(80)
+	fmt.Println(grade)
+	// Output: A
 }
